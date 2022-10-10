@@ -2,13 +2,13 @@ let x = 40;
 let d = 50;
 let n = 37;
 let y;
-
+let pixelOffset = 12;
 let decrement = 0.25;
 
 balls = [];
 
 function setup() {
-  createCanvas(windowWidth, windowHeight - 4);
+  createCanvas(windowWidth - pixelOffset, windowHeight - pixelOffset);
   y = windowHeight / 2;
   for (let i = 0; i < n; i++) {
     if (i % 2 == 0) {
