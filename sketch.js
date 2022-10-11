@@ -50,9 +50,9 @@ function draw() {
     textAlign(CENTER, CENTER);
     text("Game Over", width / 2, height / 2);
     noLoop();
-    // setTimeout(() => {
-    //   location.reload();
-    // }, 1000);
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
   }
 }
 
