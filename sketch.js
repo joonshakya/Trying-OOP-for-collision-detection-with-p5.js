@@ -1,6 +1,6 @@
 let x = 40;
 let d = 50;
-let n = 37;
+let n;
 let y;
 let pixelOffset = 12;
 let decrement = 0.25;
@@ -10,11 +10,12 @@ balls = [];
 function setup() {
   createCanvas(windowWidth - pixelOffset, windowHeight - pixelOffset);
   y = windowHeight / 2;
-  for (let i = 0; i < n; i++) {
-    if (i % 2 == 0) {
-      balls.push(new Ball(x + i * x, x, d));
+
+  for (n = 0; x + n * x < width - d / 2; n++) {
+    if (n % 2 == 0) {
+      balls.push(new Ball(x + n * x, x, d));
     } else {
-      balls.push(new Ball(x + (i - 1) * x, Math.random() * 300 + y, d));
+      balls.push(new Ball(x + (n - 1) * x, Math.random() * 300 + y, d));
     }
   }
   rectMode(CENTER);
@@ -49,9 +50,9 @@ function draw() {
     textAlign(CENTER, CENTER);
     text("Game Over", width / 2, height / 2);
     noLoop();
-    setTimeout(() => {
-      location.reload();
-    }, 1000);
+    // setTimeout(() => {
+    //   location.reload();
+    // }, 1000);
   }
 }
 
