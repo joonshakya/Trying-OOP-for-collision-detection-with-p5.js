@@ -11,13 +11,14 @@ function setup() {
   createCanvas(windowWidth - pixelOffset, windowHeight - pixelOffset);
   y = windowHeight / 2;
 
-  for (n = 0; x + n * x < width - d / 2; n++) {
+  for (n = 0; x + (n - 1) * x < width - d / 2; n++) {
     if (n % 2 == 0) {
       balls.push(new Ball(x + n * x, x, d));
     } else {
       balls.push(new Ball(x + (n - 1) * x, Math.random() * 300 + y, d));
     }
   }
+  console.log(n);
   rectMode(CENTER);
 }
 
